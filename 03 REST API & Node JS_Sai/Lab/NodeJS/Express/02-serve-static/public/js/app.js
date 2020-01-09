@@ -1,0 +1,1 @@
+console.log('We are inside the app.js file');

@@ -1,0 +1,21 @@
+{
+  "name": "hellonpm",
+  "version": "12.13.1",
+  "description": "A simple Node server",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Roy Nunez",
+  "license": "ISC",
+  "keywords": [
+    "package.json"
+  ],
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

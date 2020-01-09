@@ -1,0 +1,32 @@
+{
+  "name": "section2.4",
+  "version": "1.0.0",
+  "description": "Installing dependencies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    //Must match version exactly
+    "lodash": "4.13.1",
+    //Must match version exactly
+    "lodash": ">4.13.1",
+    "lodash": ">=4.13.1",
+    "lodash": "<4.13.1",
+    "lodash": "<=4.13.1",
+    //Approximately equivalent to version
+    "lodash": "~4.13.1",
+    //Compatible with version
+    "lodash": "^4.13.1",
+    //4.13.1, 4.13.2, etc., but not 4.14.1
+    "lodash": "4.13.x",
+    //Matches any version
+    "lodash": "*",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "debug": "2.2.0"
+  }
+}

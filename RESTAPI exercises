@@ -1,0 +1,25 @@
+GET
+/posts?&page=1
+
+POST
+/posts/
+
+PUT
+/posts/{id}
+
+DELETE
+/posts/{id}
+
+SEARCH
+/posts?search=term
+
+lists
+/posts/id/{tags}
+/posts/id/{tag}
+
+
+hod to get  a tag for all its posts for rendering a tag page?
+
+/tags/tagname/posts/
+/tags/tagname {alwasys inlcuude posts in the tag represented}
+/tags/tagname/expand=true

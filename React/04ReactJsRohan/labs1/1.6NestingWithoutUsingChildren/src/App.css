@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.first {
+  border: solid 2px blue;
+}
+
+.second {
+  border: solid 2px red;
+}

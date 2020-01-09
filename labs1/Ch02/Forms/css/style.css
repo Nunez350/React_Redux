@@ -1,0 +1,52 @@
+/* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+
+html, textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    border: 1px solid gray;
+    padding: 30px;
+    border-radius: 10px;
+    width: 600px;
+    margin: 0 auto;
+}
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+button {
+    height: 36px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+div {
+    margin: 15px 0px;
+}
+
+input, select {
+    height: 32px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input:focus {
+   background-color: lightblue;
+}
+
+textarea {
+    width: 100%;
+}
+label {
+    margin-bottom: 10px;
+}
