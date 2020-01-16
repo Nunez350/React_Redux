@@ -12,6 +12,7 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false
   }
+  
 
   nameChangeHandler = (event, id) => {
     //Get the array index from the person id value

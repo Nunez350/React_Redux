@@ -1,30 +1,59 @@
-const initialState = {
-    counter: 0
-}
+// const initialState = {
+//     counter: 0,
+//     results:[]
+// }
 
-const reducer = (state = initialState, action) => {
-    if (action.type === 'INCREMENT') {
-        return {
-            counter: state.counter + 1
-        }
-    }
-    if (action.type === 'DECREMENT') {
-        return {
-            counter: state.counter - 1
-        }
-    }
-    if (action.type === 'ADD') {
-        return {
-            counter: state.counter + 10
-        }
-    }
-    if (action.type === 'SUBTRACT') {
-        return {
-            counter: state.counter - 8
-        }
-    }
-    return state;
-};
+// const reducer = (state = initialState, action) => {
+//     switch (action.type) {
 
-export default reducer;
+//         case 'INCREMENT':
+//             return {
+//                 ...state,
+//                 counter: state.counter + 1
+//             }
+        
+//         case 'DECREMENT':
+//             return {
+//                 ...state,
+//                 counter: state.counter - 1
+//             }
+        
+//         case 'ADD':
+//             return {
+//                 ...state,
+//                 counter: state.counter + action.payload
+//             }
+        
+//         case 'SUBTRACT':
+//             return {
+//                 ...state,
+//                 counter: state.counter - action.payload
+//             }
+//         case 'STORE_RESULT':
+//             return {
+//                 ...state, 
+//                 results: state.results.concat({id: new Date(),  val: state.counter})
+//             }
+//         case 'DELETE_ID':            
+          
+//                 const newArray = state.results.filter(result => {
+//                     return result.id !== action.id
+//                 });
+
+//                 console.log("onclick")
+                 
+//                 return {
+//                     ...state,
+//                     results:newArray
+
+//             }
+            
+        
+//         default:
+
+//     }
+//    return state;
+// };
+
+// export default reducer;
 
