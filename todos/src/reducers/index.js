@@ -10,7 +10,7 @@ const todosReducer = (state = initialState, action) => {
         return {
           ...state,
           todos: action.todos.data
-        };
+        }
         case 'TODO_CREATED':
           console.log("Todo is created");
           break;
@@ -20,6 +20,7 @@ const todosReducer = (state = initialState, action) => {
       default:
         return state;
     }
+    return state;
   }
   
 

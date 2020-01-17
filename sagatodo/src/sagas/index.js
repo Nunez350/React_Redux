@@ -1,5 +1,7 @@
+
+
 import axios from 'axios';
-import { call, put, takeEvery, all , take} from 'redux-saga/effects';
+import { call, put, takeEvery, all, select , take} from 'redux-saga/effects';
 
 const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=edgar1234';
@@ -20,14 +22,11 @@ function* watchFetchTodos() {
 
 
 
- function* createTodo(action) {
-  const newTodo = { title: '', categories: '', content: action.payload };
+export function* createTodo(action) {
+    const newObj ={"id":null,"title":"Lunctime","categories":"IT","content":"Aliens"}
   try {
-    yield call(axios.post, `${ROOT_URL}/posts${API_KEY}`, newTodo);
-    console.log("hi")
-    yield put({type:"TODO_CREATED"})
+    yield call(axios.post, `${ROOT_URL}/posts${API_KEY}`, newObj);
     yield put({type:'FETCH_TODOS'});
-   
   } catch (error) {
     console.log('createTodo error:', error.message);
   }
@@ -37,7 +36,7 @@ function * watchAddToDo() {
   yield takeEvery('ADD_TODO', createTodo)
 }
 
- function* deleteTodo({id}) {
+export function* deleteTodo({id}) {
   try {
     yield call(axios.delete, `${ROOT_URL}/posts/${id}${API_KEY}`);
     yield put({type: 'FETCH_TODOS'})
@@ -52,42 +51,43 @@ function* watchDeleteTodo() {
 }
 
 
-// function* watchAndLog() {
-//   yield takeEvery('*', function* logger(action) {
-//     const state = yield select()
 
-//     console.log('action', action)
-//     console.log('state after', state)
-//   })
-// }
 
-function* watchFirstThreeTodosCreation() {
-  for (let i = 0; i < 3; i++) {
-    const action = yield take('TODO_CREATED')
-  }
-  yield put({type: 'SHOW_CONGRATULATION'})
-}
 
 export default function* rootSaga() {
   yield all([
     watchFetchTodos(),
     watchAddToDo(),
-    watchDeleteTodo(),
-
-    watchFirstThreeTodosCreation()
+    watchDeleteTodo()
   ])
 };
 
+// axios.post(url[, data[, config]])
 
 
 
-// function* watchAndLog() {
-//   yield takeEvery('*', function* logger(action) {
-//     const state = yield select()
+// export function* deleteTodo({id}){
+//     try { 
+//         yield call(axios.delete, $ROOT_URL)
+//     } catch(error){
 
-//     console.log('action', action)
-//     console.log('state after', state)
-//   })
+//     }
 // }
 
 
+// function* watchDeleteTodo(){
+//     yield takeEvery('DELETE_TODO', deleteTodo)
+// }
+
+
+
+// watchDeleteTodo()
+
+// const mapDispatchToProps = dipatch => {
+//     return {
+//         onIncrementCounter: () => dipatch({type: ActionTypes.INCREMENT})
+    
+//     }
+// };
+
+// export default connect(mapStateToProps, mapDipatchToProps)(fetchTodos)
